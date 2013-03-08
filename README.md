@@ -29,10 +29,12 @@ Add Rapns to your Gemfile:
 
     gem 'rapns'
 
-Generate the migrations, rapns.yml and migrate:
+Generate the migrations, rapns initializer and migrate:
 
     rails g rapns
     rake db:migrate
+
+To skip the migrations, run the first command with the option `--skip-migrations`.
 
 ## Generating Certificates (APNs only)
 
