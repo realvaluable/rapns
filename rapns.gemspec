@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "rapns/version"
 
 Gem::Specification.new do |s|
-  s.name        = "rapns"
+  s.name        = "coffeetable_rapns"
   s.version     = Rapns::VERSION
   s.authors     = ["Ian Leitch"]
   s.email       = ["port001@gmail.com"]

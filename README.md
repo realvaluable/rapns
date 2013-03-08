@@ -1,7 +1,7 @@
 [![Build Status](https://secure.travis-ci.org/ileitch/rapns.png?branch=master)](http://travis-ci.org/ileitch/rapns)
 [![Code Climate](https://codeclimate.com/github/ileitch/rapns.png)](https://codeclimate.com/github/ileitch/rapns)
 
-### Rapns - Professional grade APNs and GCM for Ruby.
+### CoffeeTable Rapns - Professional grade APNs and GCM for Ruby (customized for CoffeeTable).
 
 * Supports both APNs (iOS) and GCM (Google Cloud Messaging, Android).
 * Seamless Rails integration.
