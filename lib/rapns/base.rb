@@ -1,5 +1,5 @@
-class Rapns::Base < ActiveRecord::Base
-  self.abstract_class = true
-
-  establish_connection "apns_#{Rails.env}"
+module Rapns
+  class Base < ActiveRecord::Base
+    self.abstract_class = true
+  end
 end
