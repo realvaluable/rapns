@@ -1,6 +1,7 @@
 class RapnsGenerator < Rails::Generators::Base
   include Rails::Generators::Migration
   source_root File.expand_path('../templates', __FILE__)
+  class_option :skip_migrations, :type => :boolean, :default => false, :description => "Don't generate rapns migrations"
 
   def self.next_migration_number(path)
     @time ||= Time.now.utc
@@ -10,17 +11,19 @@ class RapnsGenerator < Rails::Generators::Base
   end
 
   def copy_migration
-    add_rapns_migration('create_rapns_notifications')
-    add_rapns_migration('create_rapns_feedback')
-    add_rapns_migration('add_alert_is_json_to_rapns_notifications')
-    add_rapns_migration('add_app_to_rapns')
-    add_rapns_migration('create_rapns_apps')
-    add_rapns_migration('add_gcm')
-    add_rapns_migration('create_rapns_campaigns')
-    add_rapns_migration('add_campaign_id_to_rapns_notifications')
+    unless options.skip_migrations?
+      add_rapns_migration('create_rapns_notifications')
+      add_rapns_migration('create_rapns_feedback')
+      add_rapns_migration('add_alert_is_json_to_rapns_notifications')
+      add_rapns_migration('add_app_to_rapns')
+      add_rapns_migration('create_rapns_apps')
+      add_rapns_migration('add_gcm')
+      add_rapns_migration('create_rapns_campaigns')
+      add_rapns_migration('add_campaign_id_to_rapns_notifications')
+    end
   end
 
-   def copy_config
+  def copy_config
     copy_file 'rapns.rb', 'config/initializers/rapns.rb'
   end
 
