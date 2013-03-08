@@ -1,5 +1,5 @@
 module Rapns
-  class Notification < ActiveRecord::Base
+  class Notification < Rapns::Base
     include Rapns::MultiJsonHelper
 
     self.table_name = 'rapns_notifications'
@@ -8,6 +8,8 @@ module Rapns
     serialize :registration_ids
 
     belongs_to :app, :class_name => 'Rapns::App'
+
+    belongs_to :campaign, :class_name => 'Rapns::Campaign'
 
     attr_accessible :badge, :device_token, :sound, :alert, :data, :expiry,:delivered,
       :delivered_at, :failed, :failed_at, :error_code, :error_description, :deliver_after,

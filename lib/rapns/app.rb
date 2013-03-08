@@ -1,5 +1,5 @@
 module Rapns
-  class App < ActiveRecord::Base
+  class App < Rapns::Base
     self.table_name = 'rapns_apps'
 
     attr_accessible :name, :environment, :certificate, :password, :connections, :auth_key
