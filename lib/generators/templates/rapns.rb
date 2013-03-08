@@ -1,6 +1,6 @@
  # Rapns configuration. Options set here are overridden by command-line options.
 
- Rapns.configure do |config|
+Rapns.configure do |config|
 
   # Run in the foreground?
   # config.foreground = false
@@ -23,7 +23,7 @@
   # Path to write PID file. Relative to Rails root unless absolute.
   # config.pid_file = '/path/to/rapns.pid'
 
- end
+end
 
 Rapns.reflect do |on|
 
