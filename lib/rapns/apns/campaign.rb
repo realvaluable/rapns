@@ -7,7 +7,7 @@ module Rapns
 
       attr_accessible :name, :description, :app_id
 
-      validates_presence_of :name
+      validates_presence_of :name, :app_id
     end
   end
 end
