@@ -5,7 +5,7 @@ module Rapns
 
       belongs_to :app, :class_name => "Rapns::App"
 
-      attr_accessible :name, :description, :app_id, :badge, :alert
+      attr_accessible :name, :description, :app_id, :badge, :alert, :action_type, :catalog_ids
 
       validates_presence_of :name, :app_id
     end
