@@ -20,7 +20,7 @@ class RapnsGenerator < Rails::Generators::Base
       add_rapns_migration('add_gcm')
       add_rapns_migration('create_rapns_campaigns')
       add_rapns_migration('add_campaign_id_to_rapns_notifications')
-      add_rapns_migration('add_device_tokens_and_sent_at_to_campaigns')
+      add_rapns_migration('add_sent_at_to_rapns_campaigns')
     end
   end
 
