@@ -24,6 +24,7 @@ class RapnsGenerator < Rails::Generators::Base
       add_rapns_migration('add_action_type_to_rapns_campaigns')
       add_rapns_migration('add_catalog_ids_to_rapns_campaigns')
       add_rapns_migration('rename_action_type_to_action_types_in_rapns_campaigns')
+      add_rapns_migration('rename_action_types_to_action_type_ids_in_rapns_campaigns')
     end
   end
 
