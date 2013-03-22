@@ -17,11 +17,12 @@ module Rapns
       alias_attribute :attributes_for_device, :data
 
       def url
-        read_attribute(:data)[:url]
+        data_attribute = read_attribute(:data)
+        data_attribute ? data_attribute['url'] : ''
       end
 
       def url=(attr)
-        self.data = data.merge(:url => attr)
+        self.data = (data || {}).merge('url' => attr)
       end
 
       def data=(attrs)
