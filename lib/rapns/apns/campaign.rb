@@ -22,7 +22,12 @@ module Rapns
       end
 
       def url=(attr)
-        self.data = (data || {}).merge('url' => attr)
+        if attr.present?
+          self.data = (data || {}).merge('url' => attr)
+        else
+          data.delete('url')
+          self.data = data
+        end
       end
 
       def data=(attrs)
