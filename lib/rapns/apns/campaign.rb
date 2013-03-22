@@ -7,7 +7,6 @@ module Rapns
 
       serialize :catalog_ids
       serialize :action_type_ids
-      serialize :data
 
       belongs_to :app, :class_name => 'Rapns::App'
 
@@ -20,7 +19,7 @@ module Rapns
       def data=(attrs)
         return unless attrs
         raise ArgumentError, 'must be a Hash' if !attrs.is_a?(Hash)
-        super attrs.merge(data || {})
+        write_attribute(:data, multi_json_dump(attrs))
       end
     end
   end

@@ -33,7 +33,7 @@ describe Rapns::Apns::Campaign do
     context 'when url is empty' do
       let(:attributes) { { :name => 'Lorem', :app_id => 1 } }
 
-      it { should eql '' }
+      it { should_not be_present }
     end
   end
 end
