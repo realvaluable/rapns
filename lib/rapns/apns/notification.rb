@@ -7,6 +7,8 @@ module Rapns
 
       belongs_to :campaign, :class_name => 'Rapns::Apns::Campaign'
 
+      attr_accessible :campaign_id
+
       validates :device_token, :presence => true
       validates :badge, :numericality => true, :allow_nil => true
 
