@@ -2,7 +2,7 @@ require 'unit_spec_helper'
 
 describe Rapns::Apns::Campaign do
   let(:campaign) { described_class.create attributes  }
-  let(:attributes) { { :name => 'Lorem', :app_id => 1, :url => 'betatable://issues/1146' } }
+  let(:attributes) { { :name => 'Lorem', :app_id => 1, :url => 'betatable://issues/1146', :action_type_ids => [1, 2] } }
 
   it { campaign.should be_valid }
 

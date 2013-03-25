@@ -9,10 +9,11 @@ module Rapns
       serialize :action_type_ids
 
       belongs_to :app, :class_name => 'Rapns::App'
+      has_many :notifications, :class_name => 'Rapns::Apns::Notification'
 
       attr_accessible :name, :description, :app_id, :badge, :alert, :action_type_ids, :catalog_ids, :attributes_for_device, :sound, :data
 
-      validates_presence_of :name, :app_id
+      validates_presence_of :name, :app_id, :action_type_ids
 
       alias_attribute :attributes_for_device, :data
 
