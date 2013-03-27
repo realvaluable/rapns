@@ -26,6 +26,7 @@ class RapnsGenerator < Rails::Generators::Base
       add_rapns_migration('rename_action_type_to_action_types_in_rapns_campaigns')
       add_rapns_migration('rename_action_types_to_action_type_ids_in_rapns_campaigns')
       add_rapns_migration('add_sound_and_data_to_rapns_campaigns')
+      add_rapns_migration('add_removed_at_to_rapns_feedback')
     end
   end
 
