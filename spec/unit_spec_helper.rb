@@ -48,13 +48,15 @@ require 'generators/templates/rename_action_type_to_action_types_in_rapns_campai
 require 'generators/templates/rename_action_types_to_action_type_ids_in_rapns_campaigns'
 require 'generators/templates/add_sound_and_data_to_rapns_campaigns'
 require 'generators/templates/add_removed_at_to_rapns_feedback'
+require 'generators/templates/add_deliver_after_to_rapns_campaigns'
 
 [CreateRapnsNotifications, CreateRapnsFeedback, AddAlertIsJsonToRapnsNotifications,
  AddAppToRapns, CreateRapnsApps, AddGcm, CreateRapnsCampaigns,
  AddCampaignIdToRapnsNotifications, AddSentAtToRapnsCampaigns,
  AddActionTypeToRapnsCampaigns, AddCatalogIdsToRapnsCampaigns,
  RenameActionTypeToActionTypesInRapnsCampaigns, RenameActionTypesToActionTypeIdsInRapnsCampaigns,
- AddSoundAndDataToRapnsCampaigns, AddRemovedAtToRapnsFeedback].each do |migration|
+ AddSoundAndDataToRapnsCampaigns, AddRemovedAtToRapnsFeedback,
+ AddDeliverAfterToRapnsCampaigns].each do |migration|
   migration.down rescue ActiveRecord::StatementInvalid
   migration.up
 end
