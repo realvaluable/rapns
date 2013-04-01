@@ -34,6 +34,18 @@ Generate the migrations, rapns initializer and migrate:
     rails g rapns
     rake db:migrate
 
+This custom version implements two features:
+
+  - Send campaings of notifications to custom audiences
+  - Runs rapns in a different infra from your app
+
+Add custom database config in your rapns.rb initializer, to get the advantages
+of running a separeted daemon.
+
+```ruby
+Rapns::Base.establish_connection "apns_#{Rails.env}"
+```
+
 To skip the migrations, run the first command with the option `--skip-migrations`.
 
 ## Generating Certificates (APNs only)
